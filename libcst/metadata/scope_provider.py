@@ -842,8 +842,8 @@ class ScopeVisitor(cst.CSTVisitor):
             if enclosing_attribute is not None:
                 # if _gen_dotted_names doesn't generate any values, fall back to
                 # the original name node above
-                for name, node in _gen_dotted_names(enclosing_attribute):
-                    if name in access.scope:
+                for attribute_name, node in _gen_dotted_names(enclosing_attribute):
+                    if attribute_name in access.scope:
                         access.node = node
                         break
 
